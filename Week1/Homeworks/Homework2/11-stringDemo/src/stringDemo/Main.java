@@ -2,7 +2,7 @@ package stringDemo;
 
 // https://www.youtube.com/playlist?list=PLqG356ExoxZUGwbqoJEKSMnaxVJe4Uvf8
 // "JAVA Dersleri"
-// Lesson 17
+// Lesson 17 18
 
 public class Main {
 
@@ -21,7 +21,16 @@ public class Main {
 		System.out.println(karakterler);
 		System.out.println(mesaj.indexOf('a'));
 		System.out.println(mesaj.lastIndexOf('a'));
-
+		
+		System.out.println(mesaj.replace(" ", "-"));
+		System.out.println(mesaj.substring(3));
+		System.out.println(mesaj.substring(7,13));
+		
+		for(String kelime : mesaj.split(" ")) {
+			System.out.println(kelime);
+		}
+		
+		
 	}
 
 }
