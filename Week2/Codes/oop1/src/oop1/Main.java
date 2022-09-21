@@ -29,9 +29,11 @@ public class Main {
 
 		Product[] products = { product1, product2, product3 };
 		
+		System.out.println("<ul>");
 		for (Product product : products) {
-			System.out.println(product.getName());
+			System.out.println("<li>"+product.getName()+"</li>");
 		}
+		System.out.println("</ul>");
 
 	}
 
