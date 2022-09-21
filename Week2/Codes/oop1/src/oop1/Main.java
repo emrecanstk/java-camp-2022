@@ -3,8 +3,22 @@ package oop1;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		
+		String mesaj = "Vade oranı";
+		
+		Product product1 = new Product();
+		
+		   // set value
+		product1.name = "Delonghi Kahve Makinesi";
+		product1.unitPrice = 7500;
+		product1.discount = 7;
+		product1.unitsInStock = 3;
+		product1.imageUrl = "bilmemne.jpg";
+		
+		   // get value
+		System.out.println(product1.name);
+		
+		
 	}
 
 }
