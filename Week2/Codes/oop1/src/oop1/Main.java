@@ -35,12 +35,21 @@ public class Main {
 		}
 		System.out.println("</ul>");
 		
-		IndividualCustomer individualCustomer1 = new IndividualCustomer();
-		individualCustomer1.setId(1);
-		individualCustomer1.setPhone("051111111111");
-		individualCustomer1.setCustomerNumber("124841244");
-		individualCustomer1.setFirstName("Emre Can");
-		individualCustomer1.setLastName("Satık");
+		IndividualCustomer individualCustomer = new IndividualCustomer();
+		individualCustomer.setId(1);
+		individualCustomer.setPhone("051111111111");
+		individualCustomer.setCustomerNumber("124841244");
+		individualCustomer.setFirstName("Emre Can");
+		individualCustomer.setLastName("Satık");
+		
+		CorporateCustomer corporateCustomer = new CorporateCustomer();
+		corporateCustomer.setId(2);
+		corporateCustomer.setCompanyName("Kodlama.io");
+		corporateCustomer.setPhone("053444444");
+		corporateCustomer.setTaxNumber("1111111111111");
+		corporateCustomer.setCustomerNumber("15545113");
+		
+		
 	}
 
 }
