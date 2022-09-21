@@ -34,7 +34,13 @@ public class Main {
 			System.out.println("<li>"+product.getName()+"</li>");
 		}
 		System.out.println("</ul>");
-
+		
+		IndividualCustomer individualCustomer1 = new IndividualCustomer();
+		individualCustomer1.setId(1);
+		individualCustomer1.setPhone("051111111111");
+		individualCustomer1.setCustomerNumber("124841244");
+		individualCustomer1.setFirstName("Emre Can");
+		individualCustomer1.setLastName("Satık");
 	}
 
 }
