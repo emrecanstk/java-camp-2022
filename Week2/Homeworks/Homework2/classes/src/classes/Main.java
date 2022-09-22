@@ -1,5 +1,9 @@
 package classes;
 
+// https://www.youtube.com/playlist?list=PLqG356ExoxZUGwbqoJEKSMnaxVJe4Uvf8
+// "JAVA Dersleri"
+// Lesson 28 29 30
+
 public class Main {
 
 	public static void main(String[] args) {
