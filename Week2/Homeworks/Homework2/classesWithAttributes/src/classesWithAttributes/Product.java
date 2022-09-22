@@ -60,7 +60,7 @@ public class Product {
 	}
 
 	public String getKod() {
-		return kod;
+		return this.name.substring(0,1)+id;
 	}
 
 	public void setKod(String kod) {

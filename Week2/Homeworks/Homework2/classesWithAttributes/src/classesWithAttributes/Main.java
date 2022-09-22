@@ -9,11 +9,11 @@ public class Main {
 		product.setDescription("Asus Laptop 8GB RAM");;
 		product.setPrice(11000);
 		product.setColor("Black");
-		product.setKod("L1");
 
 		ProductManager productManager = new ProductManager();
 		
 		productManager.Add(product);
+		System.out.println(product.getKod());
 		
 
 	}
