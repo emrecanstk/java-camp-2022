@@ -4,11 +4,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		Product product = new Product();
-		product.name = "Laptop";
-		product.id = 1;
-		product.description = "Asus Laptop 8GB RAM";
-		product.price = 11000;
-		product.stockAmount = 3;
+		product.setName("Laptop");
+		product.setId(1);
+		product.setDescription("Asus Laptop 8GB RAM");;
+		product.setPrice(11000);
+		product.setColor("Black");
+		product.setKod("L1");
 
 		ProductManager productManager = new ProductManager();
 		
