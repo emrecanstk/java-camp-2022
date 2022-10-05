@@ -2,11 +2,11 @@ package oopWithNLayaredApp.dataAccess;
 
 import oopWithNLayaredApp.entities.Product;
 
-public class JdbcProductDao implements ProductDao{
+public class HibernateProductDao implements ProductDao {
 
 	@Override
 	public void add(Product product) {
-		System.out.println("Jdbc ile eklendi.");
+		System.out.println("Hibernate ile eklendi.");
 		
 	}
 	
