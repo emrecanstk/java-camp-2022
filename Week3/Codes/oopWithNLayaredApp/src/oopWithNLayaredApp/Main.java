@@ -14,6 +14,9 @@ public class Main {
 		Product product1 = new Product(1,"Poco X3",10000);
 		
 		Logger[] loggers = {new DatabaseLogger(), new FileLogger(), new MailLogger()};
+		// herhangi üçünü, ikisini, birini veya hiçbirini
+		// merkezi bir noktadan hangileri ile loglama yapabileceğimizi seçebiliyoruz.
+		// bağımlılık enjekte etme --> dependency injection
 		
 		ProductManager productManager = new ProductManager(new JdbcProductDao(),loggers);
 		productManager.add(product1);
