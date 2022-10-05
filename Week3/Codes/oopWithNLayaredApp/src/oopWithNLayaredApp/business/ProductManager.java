@@ -1,14 +1,15 @@
 package oopWithNLayaredApp.business;
-
-import oopWithNLayaredApp.dataAccess.JdbcProductDao;
+import oopWithNLayaredApp.core.logging.Logger;
 import oopWithNLayaredApp.dataAccess.ProductDao;
 import oopWithNLayaredApp.entities.Product;
 
 public class ProductManager {
 	private ProductDao productDao;
+	private Logger[] loggers;      // List<Logger> loggers;
 	
-	public ProductManager(ProductDao productDao) {
+	public ProductManager(ProductDao productDao, Logger[] loggers) {
 		this.productDao = productDao;
+		this.loggers = loggers;
 	}
 	
 	public void add(Product product) throws Exception {
@@ -18,6 +19,10 @@ public class ProductManager {
 
 		}
 		productDao.add(product);
+		
+		for(Logger logger: loggers) {
+			logger.log(product.getName());
+		}
 		
 		// bir katman başka bir katmanın class'ına yalnızca interface'inden erişim kurmalıdır
 		// entities hariç..
