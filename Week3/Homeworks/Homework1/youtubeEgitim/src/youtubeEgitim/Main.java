@@ -13,7 +13,7 @@ public class Main {
 		customer.setId(1);
 		customer.setCity("Bursa");
 		
-		CustomerManager customerManager = new CustomerManager(customer);
+		CustomerManager customerManager = new CustomerManager(new Company(),new MilitaryCreditManager());
 		customerManager.save();
 		customerManager.delete();
 		
@@ -22,7 +22,8 @@ public class Main {
 		company.setName("THY");
 		company.setId(100);
 		
-		CustomerManager customerManager2 = new CustomerManager(new Person());
+		// IoC Container   (araştırılacak)
+		CustomerManager customerManager2 = new CustomerManager(new Person(),new TeacherCreditManager());
 		
 		Person person = new Person();
 		person.setName("Ömer");
