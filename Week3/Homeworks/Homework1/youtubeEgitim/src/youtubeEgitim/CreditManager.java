@@ -1,11 +1,11 @@
 package youtubeEgitim;
 
 public class CreditManager {
-	public void Calculate() {
+	public void calculate() {
 		System.out.println("Hesaplandı.");
 	}
 
-	public void Save() {
+	public void save() {
 		System.out.println("Kredi verildi.");
 	}
 }
