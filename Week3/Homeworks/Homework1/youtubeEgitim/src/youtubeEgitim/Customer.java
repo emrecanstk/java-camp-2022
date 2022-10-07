@@ -3,16 +3,14 @@ package youtubeEgitim;
 public class Customer {
 	private int id;
 	private String name;
-	private String nationalIdentity;
 	private String city;
 	
 	public Customer() {}
 	
-	public Customer(int id, String name, String nationalIdentity) {
+	public Customer(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.nationalIdentity = nationalIdentity;
 	}
 
 	public int getId() {
@@ -29,14 +27,6 @@ public class Customer {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getNationalIdentity() {
-		return nationalIdentity;
-	}
-
-	public void setNationalIdentity(String nationalIdentity) {
-		this.nationalIdentity = nationalIdentity;
 	}
 
 	public String getCity() {
