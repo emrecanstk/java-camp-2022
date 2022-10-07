@@ -14,10 +14,9 @@ public class Main {
 		customer.setNationalIdentity("13424460000");
 		customer.setCity("Bursa");
 		
-		CustomerManager customerManager = new CustomerManager();
-		customerManager.save(customer);
-		customerManager.save(customer);
-		customerManager.save(customer);
+		CustomerManager customerManager = new CustomerManager(customer);
+		customerManager.save();
+		customerManager.delete();
 	}
 
 }
