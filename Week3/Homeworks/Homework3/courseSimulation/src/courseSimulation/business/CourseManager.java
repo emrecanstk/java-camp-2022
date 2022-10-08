@@ -16,7 +16,7 @@ public class CourseManager {
 	
 	List<Course> courses = new ArrayList<>();
 	
-	public void save(Course course) {
+	public void save(Course course, List<Course> haveCourses) {
 		boolean isValid = true;
 		
 		if (course.getPrice() < 0) isValid = false;
@@ -30,8 +30,28 @@ public class CourseManager {
 		if (isValid) {
 			dao.saveCourse(course);
 			courses.add(course);
+			haveCourses.add(course);
 		} else {
 			System.out.println("Kurs nitelikleri uyumsuz.");
 		}
+	}
+	
+	public void delete(Course course, List<Course> haveCourses) {
+		boolean isValid = false;
+		
+		for (Course temp : haveCourses) {
+			if(temp == course) {
+				isValid = true;
+			}
+		}
+		
+		if(isValid) {
+			haveCourses.remove(course);
+			courses.remove(course);
+			dao.deleteCourse(course);
+		} else {
+			System.out.println("Eğitimcinin böyle bir kursu bulunamadı.");
+		}
+		
 	}
 }
