@@ -6,6 +6,10 @@ public class Main {
 		WomanGameCalculator womanGameCalculator = new WomanGameCalculator();
 		womanGameCalculator.hesapla();
 		womanGameCalculator.gameOver();
+		
+		GameCalculator gameCalculator = new OlderGameCalculator();
+		gameCalculator.hesapla();
+		gameCalculator.gameOver();
 	}
 
 }
