@@ -1,6 +1,6 @@
 package courseSimulation.entities;
 
 public interface IBase {
-	void logIn();
-	void logOut();
+	void logIn(User user);
+	void logOut(User user);
 }
