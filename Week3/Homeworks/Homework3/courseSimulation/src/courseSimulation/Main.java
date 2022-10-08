@@ -27,7 +27,9 @@ public class Main {
 		instructor.setName("Engin Demiroğ");
 		instructor.createCourse(courseManager,course1);
 		instructor.createCourse(courseManager,course2);
-		instructor.createCourse(courseManager,course3);
+		
+		instructor.deleteCourse(courseManager, course1);
+		instructor.deleteCourse(courseManager, course3);
 
 	}
 
