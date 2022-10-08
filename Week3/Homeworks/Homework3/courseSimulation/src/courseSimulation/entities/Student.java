@@ -1,7 +1,12 @@
 package courseSimulation.entities;
 
-public class Student extends User {
+public class Student extends User implements ICanConsume {
 	private int numberOfCoursesTaken;
 	private String gitHubAdress;
-	private Course[] courses;
+
+	@Override
+	public void takeCourse(Course course) {
+		System.out.println(this.getName()+ " öğrencisi "+course.getName()+" kursunu aldı.");
+		
+	}
 }

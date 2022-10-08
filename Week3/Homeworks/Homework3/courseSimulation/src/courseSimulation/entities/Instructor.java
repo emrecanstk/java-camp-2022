@@ -1,6 +1,11 @@
 package courseSimulation.entities;
 
-public class Instructor extends User {
+public class Instructor extends User implements ICanProduce {
 	private int numberOfCoursesTaught;
-	private Course[] courses;
+	
+	@Override
+	public void createCourse(Course course) {
+		// TODO Auto-generated method stub
+		
+	}
 }
