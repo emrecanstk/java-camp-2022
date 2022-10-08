@@ -11,3 +11,5 @@ public abstract class GameCalculator {
 
 // dolayısıyla kim bu sınıfı miras alıyor ise hesapla'yı override etmek zorunda!
 // gameOver'ı ise aynen kullanmak zorunda.
+
+// NOT: abstract sınıflar asla new'lenemez (nesneleri oluşturulamaz)
