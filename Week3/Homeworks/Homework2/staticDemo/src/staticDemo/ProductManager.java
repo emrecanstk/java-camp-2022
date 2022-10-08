@@ -8,4 +8,6 @@ public class ProductManager {
 			System.out.println("Ürün bilgileri geçersiz");
 		}
 	}
+	
+	
 }
