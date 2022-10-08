@@ -7,13 +7,15 @@ import courseSimulation.dataAccess.IDao;
 import courseSimulation.entities.Course;
 
 public class CourseManager {
-	List<Course> courses = new ArrayList<>();
+	
 	private IDao dao;
 
 	public CourseManager(IDao dao) {
 		this.dao = dao;
 	}
-
+	
+	List<Course> courses = new ArrayList<>();
+	
 	public void save(Course course) {
 		boolean isValid = true;
 		
@@ -24,7 +26,7 @@ public class CourseManager {
 					
 				}
 		}
-
+		
 		if (isValid) {
 			dao.saveCourse(course);
 			courses.add(course);
