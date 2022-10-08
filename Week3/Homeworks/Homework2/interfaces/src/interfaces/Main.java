@@ -3,7 +3,7 @@ package interfaces;
 public class Main {
 
 	public static void main(String[] args) {
-		
+		ICustomerDal customerDal = new OracleCustomerDal();
 
 	}
 
@@ -13,3 +13,5 @@ public class Main {
 // bir sınıfın birden fazla interface'i implemente edebilmesidir.
 
 // inheritasyon işlemlerinde (kalıtımda) böyle bir durum söz konusu değildir.
+
+// interface'ler de abstractlar gibi new'lenemezler

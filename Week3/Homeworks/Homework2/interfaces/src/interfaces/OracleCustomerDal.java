@@ -1,6 +1,6 @@
 package interfaces;
 
-public class OracleCustomerDal implements ICustomerDal {
+public class OracleCustomerDal implements ICustomerDal, IRepository {   // birden fazla interface implemente edilebiliyor.
 
 	@Override
 	public void add() {
