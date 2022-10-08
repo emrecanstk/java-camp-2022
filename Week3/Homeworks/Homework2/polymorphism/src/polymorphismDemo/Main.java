@@ -7,6 +7,9 @@ public class Main {
 		for (BaseLogger logger : loggers) {
 			logger.log("Log message");
 		}
+		
+		CustomerManager customerManager = new CustomerManager(new DatabaseLogger());
+		customerManager.add();
 	}
 
 }
