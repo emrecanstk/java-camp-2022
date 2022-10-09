@@ -1,5 +1,6 @@
 package courseSimulation;
 
+import courseSimulation.business.CatagoryManager;
 import courseSimulation.business.CourseManager;
 import courseSimulation.business.UserManager;
 import courseSimulation.core.logging.FileLogger;
@@ -8,6 +9,7 @@ import courseSimulation.core.logging.MailLogger;
 import courseSimulation.core.logging.SmsLogger;
 import courseSimulation.dataAccess.Hibernate;
 import courseSimulation.dataAccess.Jdbc;
+import courseSimulation.entities.Catagory;
 import courseSimulation.entities.Course;
 import courseSimulation.entities.Instructor;
 import courseSimulation.entities.Student;
@@ -46,6 +48,16 @@ public class Main {
 		UserManager userManager = new UserManager(new Jdbc());
 		userManager.save(student);
 		userManager.log(loggers, student);
+		
+		Catagory catagory = new Catagory();
+		catagory.setName("Backend");
+		
+		CatagoryManager catagoryManager = new CatagoryManager(new Hibernate());
+		catagoryManager.save(catagory);
+		catagoryManager.save(catagory);      // aynı isimle başka bir katagori olduğu için eklemeyecek.
+		catagoryManager.delete(catagory);
+		catagoryManager.save(catagory);      // az önce silinebildiği için yeniden kaydedilebilir. / eklenebilir.
+		
 
 	}
 
