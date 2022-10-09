@@ -3,6 +3,7 @@ package courseSimulation.business;
 import java.util.ArrayList;
 import java.util.List;
 
+import courseSimulation.core.logging.ILogger;
 import courseSimulation.dataAccess.IDao;
 import courseSimulation.entities.Course;
 
@@ -53,5 +54,11 @@ public class CourseManager {
 			System.out.println("Eğitimcinin böyle bir kursu bulunamadı.");
 		}
 		
+	}
+	
+	public void log(ILogger[] loggers,Course course) {
+		for (ILogger logger : loggers) {
+			logger.log(course.getName());
+		}
 	}
 }

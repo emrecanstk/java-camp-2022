@@ -35,6 +35,8 @@ public class Main {
 		
 		instructor.deleteCourse(courseManager, course1);
 		instructor.deleteCourse(courseManager, course3);
+		
+		courseManager.log(loggers, course3);
 
 	}
 

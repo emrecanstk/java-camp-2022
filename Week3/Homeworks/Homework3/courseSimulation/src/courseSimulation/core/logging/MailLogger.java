@@ -4,7 +4,7 @@ public class MailLogger implements ILogger {
 
 	@Override
 	public void log(String message) {
-		// TODO Auto-generated method stub
+		System.out.println("Mail yoluyla loglandı: "+message);
 		
 	}
 
