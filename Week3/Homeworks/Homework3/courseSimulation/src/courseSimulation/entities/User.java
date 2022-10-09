@@ -3,7 +3,7 @@ package courseSimulation.entities;
 public class User implements IBase {
 	private String name;
 	private String email;
-	private int age;
+	private String position;
 
 	public String getName() {
 		return name;
@@ -20,14 +20,6 @@ public class User implements IBase {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public int getAge() {
-		return age;
-	}
-	
-	public void setAge(int age) {
-		this.age = age;
-	}
 
 	@Override
 	public void logIn(User user) {
@@ -39,6 +31,14 @@ public class User implements IBase {
 	public void logOut(User user) {
 		System.out.println(user.name + " siteden çıkış yaptı.");
 
+	}
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
 	}
 
 }

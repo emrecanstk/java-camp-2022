@@ -56,6 +56,7 @@ public class CourseManager {
 		
 	}
 	
+	
 	public void log(ILogger[] loggers,Course course) {
 		for (ILogger logger : loggers) {
 			logger.log(course.getName());

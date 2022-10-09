@@ -8,7 +8,11 @@ import courseSimulation.business.CourseManager;
 public class Instructor extends User implements ICanProduce {
 	private String website;
 	private List<Course> haveCourses = new ArrayList<>();
-
+	
+	public Instructor() {
+		this.setPosition("Eğitimci");
+	}
+	
 	@Override
 	public void createCourse(CourseManager courseManager, Course course) {
 
