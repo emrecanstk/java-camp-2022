@@ -1,6 +1,10 @@
 package courseSimulation;
 
 import courseSimulation.business.CourseManager;
+import courseSimulation.core.logging.FileLogger;
+import courseSimulation.core.logging.ILogger;
+import courseSimulation.core.logging.MailLogger;
+import courseSimulation.core.logging.SmsLogger;
 import courseSimulation.dataAccess.Hibernate;
 import courseSimulation.entities.Course;
 import courseSimulation.entities.Instructor;
@@ -10,6 +14,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		CourseManager courseManager = new CourseManager(new Hibernate());
+		ILogger[] loggers = {new FileLogger(),new MailLogger(),new SmsLogger()};
 
 		Course course1 = new Course();
 		course1.setName("Java 2022");
