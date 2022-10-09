@@ -45,6 +45,7 @@ public class Main {
 		student.setName("Emre Can");
 		UserManager userManager = new UserManager(new Jdbc());
 		userManager.save(student);
+		userManager.log(loggers, student);
 
 	}
 
