@@ -33,3 +33,22 @@ from products inner join Categories on Products.CategoryID = Categories.Category
 -- Ürünlerin id, isim ve birim fiyatı içerenlerini ve katagorilerin isiim içeren sütunlarını seç.
 -- Bu seçime ürünlerdeki katagori numaraları ile
 -- Katagorilerin katagori numaraları eşleşen katagorileri alma şartıyla ekle.
+
+-- left join farkı
+select * from Products p inner join [Order Details] od on p.ProductID = od.ProductID
+-- boşluk kabul edilmediği için köşeli parantez ile belirttik.
+select * from Products p left join [Order Details] od on p.ProductID = od.ProductID
+-- left: kendisinin solunda oluğ sağında olmayanları da getir
+select * from Customers c left join Orders o on c.CustomerID = o.CustomerID
+
+-- is null
+select * from Customers c left join Orders o on c.CustomerID = o.CustomerID
+where o.CustomerID is null
+-- left join ile solunda olup sağında olmayanları hedeflemiştik.
+-- şimdi bunları birleştirirkenki koşulumuz sağda olmayanları belirtmek olacak
+-- left join'in tersi right joindir.
+
+-- ikiden fazla join kullanımı
+select * from Products p inner join [Order Details] od on p.ProductID = od.ProductID
+inner join Orders o on o.OrderId = od.OrderId
+
