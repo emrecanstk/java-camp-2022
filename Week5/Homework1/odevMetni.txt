@@ -1,0 +1,3 @@
+Ar-ge : Spring Boot üzerinde JPA-Hibernate için entity ilişkilerini araştırınız. (One-To-One, One-To-Many)
+
+Bunu bir sonraki ödevinizde uygulayınız.

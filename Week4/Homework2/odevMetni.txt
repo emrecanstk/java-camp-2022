@@ -1,0 +1,8 @@
+Aşağıdaki başlıkları içeren araştırma yapıp bir medium yazısı yazınız.
+
+Rest nedir?
+Http Anahtar kelimeleri nelerdir? Açıklayınız
+
+
+
+YAPILDI >> https://medium.com/@emrecanstk/rest-api-ve-http-ile-i%CC%87leti%C5%9Fim-95069b43c25c

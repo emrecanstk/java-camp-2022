@@ -1,0 +1,9 @@
+Req 2 : Sisteme programlama dillerine ait alt teknolojiler eklenebilmeli, silinebilmeli. güncellenebilmeli, listelenebilmelidir.
+Örneğin; Java : Spring, JSP.
+C#: WPF, ASP.NET ,
+JavaScript : Vue, React
+Önemli : Asla copy paste yapmayınız. Projeyi sıfırdan oluşturacağınız için vakit alacaktır ama konuyu pekiştirmenizi sağlar.
+
+Kodlarınızı github'a aktarıp yorumlara github adresinizi yazınız.
+
+Diğer arkadaşlarınızın kodlarını inceleyiniz. Beğenirseniz yıldızlayınız.
