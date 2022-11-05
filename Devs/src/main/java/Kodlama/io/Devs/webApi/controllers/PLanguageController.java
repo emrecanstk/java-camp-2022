@@ -3,11 +3,14 @@ package Kodlama.io.Devs.webApi.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import Kodlama.io.Devs.business.abstracts.PLanguageService;
+import Kodlama.io.Devs.business.responses.GetAllPLanguagesResponse;
 import Kodlama.io.Devs.entities.concretes.PLanguage;
 
 @RestController
@@ -22,7 +25,7 @@ public class PLanguageController {
 	}
 	
 	@GetMapping("/getAll")
-	public List<PLanguage> getAll() {
+	public List<GetAllPLanguagesResponse> getAll() {
 		return languageService.getAll();
 	}
 	
@@ -31,19 +34,19 @@ public class PLanguageController {
 		return languageService.getById(id);
 	}
 	
-	@GetMapping("/add")
+	@PostMapping("/add")
 	public void add(PLanguage language) throws Exception {
 		languageService.add(language);
 		System.out.println("Added "+language.getName());
 	}
 	
-	@GetMapping("/update")
+	@PostMapping("/update")
 	public void update(PLanguage language) throws Exception {
 		languageService.update(language);
 		System.out.println("Updated "+language.getName());
 	}
 	
-	@GetMapping("/delete")
+	@DeleteMapping("/delete")
 	public void delete(int id) {
 		languageService.delete(id);
 		System.out.println("Deleted.");
