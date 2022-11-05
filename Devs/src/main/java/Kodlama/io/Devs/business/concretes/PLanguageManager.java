@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import Kodlama.io.Devs.business.abstracts.PLanguageService;
 import Kodlama.io.Devs.business.requests.CreatePLanguageRequest;
-import Kodlama.io.Devs.business.requests.UpdatePlanguageRequest;
+import Kodlama.io.Devs.business.requests.UpdatePLanguageRequest;
 import Kodlama.io.Devs.business.responses.GetAllPLanguagesResponse;
 import Kodlama.io.Devs.business.responses.GetPLanguageByIdResponse;
 import Kodlama.io.Devs.dataAccess.abstracts.PLanguageRepository;
@@ -69,9 +69,9 @@ public class PLanguageManager implements PLanguageService{
 	}
 
 	@Override
-	public void update(UpdatePlanguageRequest updatePlanguageRequest, int id) throws Exception {
+	public void update(UpdatePLanguageRequest updatePLanguageRequest, int id) throws Exception {
 		PLanguage languege=languageRepository.getReferenceById(id);
-		languege.setName(updatePlanguageRequest.getName());
+		languege.setName(updatePLanguageRequest.getName());
 	    languageRepository.save(languege);
 	}
 
