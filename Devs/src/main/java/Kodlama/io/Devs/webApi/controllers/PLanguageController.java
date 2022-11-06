@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import Kodlama.io.Devs.business.abstracts.PLanguageService;
-import Kodlama.io.Devs.business.requests.CreatePLanguageRequest;
-import Kodlama.io.Devs.business.requests.UpdatePLanguageRequest;
+import Kodlama.io.Devs.business.abstracts.LanguageService;
+import Kodlama.io.Devs.business.requests.CreateLanguageRequest;
+import Kodlama.io.Devs.business.requests.UpdateLanguageRequest;
 import Kodlama.io.Devs.business.responses.GetAllPLanguagesResponse;
 import Kodlama.io.Devs.business.responses.GetPLanguageByIdResponse;
 
@@ -20,10 +20,10 @@ import Kodlama.io.Devs.business.responses.GetPLanguageByIdResponse;
 @RequestMapping("/api/languages")
 public class PLanguageController {
 	
-	private PLanguageService languageService;
+	private LanguageService languageService;
 	
 	@Autowired
-	public PLanguageController(PLanguageService languageService) {
+	public PLanguageController(LanguageService languageService) {
 		this.languageService = languageService;
 	}
 	
@@ -38,12 +38,12 @@ public class PLanguageController {
 	}
 	
 	@PostMapping("/add")
-	public void add(CreatePLanguageRequest language) throws Exception {
+	public void add(CreateLanguageRequest language) throws Exception {
 		languageService.add(language);
 	}
 	
 	@PutMapping("/update/{id}")
-	public void update(UpdatePLanguageRequest updateLanguageRequest, int id) throws Exception {
+	public void update(UpdateLanguageRequest updateLanguageRequest, int id) throws Exception {
 		languageService.update(updateLanguageRequest, id);
 	}
 	
