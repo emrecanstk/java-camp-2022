@@ -2,7 +2,6 @@ package Kodlama.io.Devs.business.concretes;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +11,7 @@ import Kodlama.io.Devs.business.requests.CreatePLanguageRequest;
 import Kodlama.io.Devs.business.requests.UpdatePLanguageRequest;
 import Kodlama.io.Devs.business.responses.GetAllPLanguagesResponse;
 import Kodlama.io.Devs.business.responses.GetPLanguageByIdResponse;
+import Kodlama.io.Devs.core.CheckService;
 import Kodlama.io.Devs.dataAccess.abstracts.PLanguageRepository;
 import Kodlama.io.Devs.entities.concretes.PLanguage;
 
@@ -19,10 +19,12 @@ import Kodlama.io.Devs.entities.concretes.PLanguage;
 public class PLanguageManager implements PLanguageService{
 	
 	private PLanguageRepository languageRepository;
+	private CheckService checkService;
 	
 	@Autowired
-	public PLanguageManager(PLanguageRepository languageRepository) {
+	public PLanguageManager(PLanguageRepository languageRepository,CheckService checkService) {
 		this.languageRepository = languageRepository;
+		this.checkService = checkService;
 	}
 	
 	@Override
@@ -65,19 +67,32 @@ public class PLanguageManager implements PLanguageService{
 		PLanguage language = new PLanguage();
 		language.setName(createPLanguageRequest.getName());
 		
-		this.languageRepository.save(language);
+		if(checkService.checkName(language)) {
+			this.languageRepository.save(language);
+		} else {
+			throw  new Exception("Check this name. The name can not be empty or already exist.");
+		}
+		
 	}
 
 	@Override
 	public void update(UpdatePLanguageRequest updatePLanguageRequest, int id) throws Exception {
-		PLanguage languege=languageRepository.getReferenceById(id);
-		languege.setName(updatePLanguageRequest.getName());
-	    languageRepository.save(languege);
+		PLanguage language=languageRepository.getReferenceById(id);
+		language.setName(updatePLanguageRequest.getName());
+		
+		if(checkService.checkName(language)) {
+			languageRepository.save(language);
+		} else {
+			throw  new Exception("Check this name. The name can not be empty or already exist.");
+		}
+	    
 	}
 
 	@Override
 	public void deleteById(int id) {
-		languageRepository.deleteById(id);
+		boolean isExist = languageRepository.existsById(id);
+		
+		if(isExist) languageRepository.deleteById(id);
 	}
 	
 }
