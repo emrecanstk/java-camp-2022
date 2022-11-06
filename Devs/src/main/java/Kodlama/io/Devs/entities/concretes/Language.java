@@ -11,12 +11,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table(name="LanguageTechnologies")
+@Table(name="pLanguages")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class LanguageTechnology {
+public class Language {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

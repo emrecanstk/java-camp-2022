@@ -13,27 +13,27 @@ import org.springframework.web.bind.annotation.RestController;
 import Kodlama.io.Devs.business.abstracts.LanguageService;
 import Kodlama.io.Devs.business.requests.CreateLanguageRequest;
 import Kodlama.io.Devs.business.requests.UpdateLanguageRequest;
-import Kodlama.io.Devs.business.responses.GetAllPLanguagesResponse;
-import Kodlama.io.Devs.business.responses.GetPLanguageByIdResponse;
+import Kodlama.io.Devs.business.responses.GetAllLanguagesResponse;
+import Kodlama.io.Devs.business.responses.GetLanguageByIdResponse;
 
 @RestController
 @RequestMapping("/api/languages")
-public class PLanguageController {
+public class LanguageController {
 	
 	private LanguageService languageService;
 	
 	@Autowired
-	public PLanguageController(LanguageService languageService) {
+	public LanguageController(LanguageService languageService) {
 		this.languageService = languageService;
 	}
 	
 	@GetMapping("/getAll")
-	public List<GetAllPLanguagesResponse> getAll() {
+	public List<GetAllLanguagesResponse> getAll() {
 		return languageService.getAll();
 	}
 	
 	@GetMapping("/getById/{id}")
-	public GetPLanguageByIdResponse getById(int id) throws Exception {
+	public GetLanguageByIdResponse getById(int id) throws Exception {
 		return languageService.getById(id);
 	}
 	

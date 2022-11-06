@@ -9,32 +9,32 @@ import org.springframework.stereotype.Service;
 import Kodlama.io.Devs.business.abstracts.LanguageService;
 import Kodlama.io.Devs.business.requests.CreateLanguageRequest;
 import Kodlama.io.Devs.business.requests.UpdateLanguageRequest;
-import Kodlama.io.Devs.business.responses.GetAllPLanguagesResponse;
-import Kodlama.io.Devs.business.responses.GetPLanguageByIdResponse;
+import Kodlama.io.Devs.business.responses.GetAllLanguagesResponse;
+import Kodlama.io.Devs.business.responses.GetLanguageByIdResponse;
 import Kodlama.io.Devs.core.CheckService;
-import Kodlama.io.Devs.dataAccess.abstracts.PLanguageRepository;
-import Kodlama.io.Devs.entities.concretes.PLanguage;
+import Kodlama.io.Devs.dataAccess.abstracts.LanguageRepository;
+import Kodlama.io.Devs.entities.concretes.Language;
 
 @Service
 public class LanguageManager implements LanguageService{
 	
-	private PLanguageRepository languageRepository;
+	private LanguageRepository languageRepository;
 	private CheckService checkService;
 	
 	@Autowired
-	public LanguageManager(PLanguageRepository languageRepository,CheckService checkService) {
+	public LanguageManager(LanguageRepository languageRepository,CheckService checkService) {
 		this.languageRepository = languageRepository;
 		this.checkService = checkService;
 	}
 	
 	@Override
-	public List<GetAllPLanguagesResponse> getAll() {
+	public List<GetAllLanguagesResponse> getAll() {
 		
-		List<PLanguage> pLanguages = languageRepository.findAll();
-		List<GetAllPLanguagesResponse> languagesResponse = new ArrayList<GetAllPLanguagesResponse>();
+		List<Language> languages = languageRepository.findAll();
+		List<GetAllLanguagesResponse> languagesResponse = new ArrayList<GetAllLanguagesResponse>();
 		
-		for(PLanguage language: pLanguages) {
-			GetAllPLanguagesResponse responseItem = new GetAllPLanguagesResponse();
+		for(Language language: languages) {
+			GetAllLanguagesResponse responseItem = new GetAllLanguagesResponse();
 			responseItem.setId(language.getId());
 			responseItem.setName(language.getName());
 			languagesResponse.add(responseItem);
@@ -45,13 +45,13 @@ public class LanguageManager implements LanguageService{
 	}
 
 	@Override
-	public GetPLanguageByIdResponse getById(int id) throws Exception {
-		List<PLanguage> languages = languageRepository.findAll();
-		GetPLanguageByIdResponse responseItem = null;
+	public GetLanguageByIdResponse getById(int id) throws Exception {
+		List<Language> languages = languageRepository.findAll();
+		GetLanguageByIdResponse responseItem = null;
 		
-		for(PLanguage language: languages) {
+		for(Language language: languages) {
 			if(language.getId() == id) {
-				responseItem = new GetPLanguageByIdResponse();
+				responseItem = new GetLanguageByIdResponse();
 				responseItem.setName(language.getName());
 				responseItem.setId(language.getId());
 			}
@@ -64,7 +64,7 @@ public class LanguageManager implements LanguageService{
 
 	@Override
 	public void add(CreateLanguageRequest createLanguageRequest) throws Exception {
-		PLanguage language = new PLanguage();
+		Language language = new Language();
 		language.setName(createLanguageRequest.getName());
 		
 		if(checkService.checkLanguageName(language)) {
@@ -77,7 +77,7 @@ public class LanguageManager implements LanguageService{
 
 	@Override
 	public void update(UpdateLanguageRequest updateLanguageRequest, int id) throws Exception {
-		PLanguage language=languageRepository.getReferenceById(id);
+		Language language=languageRepository.getReferenceById(id);
 		language.setName(updateLanguageRequest.getName());
 		
 		if(checkService.checkLanguageName(language)) {
