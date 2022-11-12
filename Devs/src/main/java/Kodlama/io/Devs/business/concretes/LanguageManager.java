@@ -67,7 +67,7 @@ public class LanguageManager implements LanguageService{
 		Language language = new Language();
 		language.setName(createLanguageRequest.getName());
 		
-		if(checkService.checkLanguageName(language)) {
+		if(checkService.checkLanguageName(language.getName())) {
 			this.languageRepository.save(language);
 		} else {
 			throw  new Exception("Check this name. The name can not be empty or already exist.");
@@ -77,10 +77,11 @@ public class LanguageManager implements LanguageService{
 
 	@Override
 	public void update(UpdateLanguageRequest updateLanguageRequest, int id) throws Exception {
-		Language language=languageRepository.getReferenceById(id);
-		language.setName(updateLanguageRequest.getName());
 		
-		if(checkService.checkLanguageName(language)) {
+		Language language=languageRepository.getReferenceById(id);
+		
+		if(checkService.checkLanguageName(updateLanguageRequest.getName())) {
+			language.setName(updateLanguageRequest.getName());
 			languageRepository.save(language);
 		} else {
 			throw  new Exception("Check this name. The name can not be empty or already exist.");

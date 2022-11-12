@@ -66,7 +66,7 @@ public class TechnologyManager implements TechnologyService {
 		Technology technology = new Technology();
 		technology.setName(createTechnologyRequest.getName());
 		
-		if(checkService.checkTechnologyName(technology)) {
+		if(checkService.checkTechnologyName(technology.getName())) {
 			this.technologyRepository.save(technology);
 		} else {
 			throw  new Exception("Check this name. The name can not be empty or already exist.");
@@ -75,10 +75,11 @@ public class TechnologyManager implements TechnologyService {
 
 	@Override
 	public void update(UpdateTechnologyRequest updateTechnologyRequest, int id) throws Exception {
-		Technology technology = technologyRepository.getReferenceById(id);
-		technology.setName(updateTechnologyRequest.getName());
 		
-		if(checkService.checkTechnologyName(technology)) {
+		Technology technology = technologyRepository.getReferenceById(id);
+		
+		if(checkService.checkTechnologyName(technology.getName())) {
+			technology.setName(updateTechnologyRequest.getName());
 			technologyRepository.save(technology);
 		} else {
 			throw  new Exception("Check this name. The name can not be empty or already exist.");

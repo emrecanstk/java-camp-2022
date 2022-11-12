@@ -21,24 +21,30 @@ public class CheckService {
 		this.technologyRepository = technologyRepository;
 	}
 	
-	public boolean checkLanguageName(Language language) {
+	public boolean checkLanguageName(String name) {
 		List<Language> languages = languageRepository.findAll();
 		
 		for(Language language2: languages) {
-			if(language2.getName().equalsIgnoreCase(language.getName())) return false;
+			System.out.println("-"+language2.getName());
+			if(language2.getName().equalsIgnoreCase(name)) {
+				return false;
+			}
 		}
-		if(language.getName() == null) return false;
+		
+		if(name == null) {
+			return false;
+		}
 		
 		return true;
 	}
 	
-	public boolean checkTechnologyName(Technology technology) {
+	public boolean checkTechnologyName(String name) {
 		List<Technology> technologies = technologyRepository.findAll();
 		
 		for(Technology technology2: technologies) {
-			if(technology2.getName().equalsIgnoreCase(technology.getName())) return false;
+			if(technology2.getName().equalsIgnoreCase(name)) return false;
 		}
-		if(technology.getName() == null) return false;
+		if(name == null) return false;
 		
 		return true;
 	}
