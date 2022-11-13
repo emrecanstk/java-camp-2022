@@ -78,7 +78,7 @@ public class TechnologyManager implements TechnologyService {
 		
 		Technology technology = technologyRepository.getReferenceById(id);
 		
-		if(checkService.checkTechnologyName(technology.getName())) {
+		if(checkService.checkTechnologyName(updateTechnologyRequest.getName())) {
 			technology.setName(updateTechnologyRequest.getName());
 			technologyRepository.save(technology);
 		} else {

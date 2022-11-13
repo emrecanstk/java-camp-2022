@@ -26,14 +26,12 @@ public class CheckService {
 		
 		for(Language language2: languages) {
 			System.out.println("-"+language2.getName());
-			if(language2.getName().equalsIgnoreCase(name)) {
-				return false;
-			}
+			if(language2.getName().equalsIgnoreCase(name)) return false;
+			
 		}
 		
-		if(name == null) {
-			return false;
-		}
+		if(name == null || name.equalsIgnoreCase("")) return false;
+
 		
 		return true;
 	}
@@ -44,7 +42,7 @@ public class CheckService {
 		for(Technology technology2: technologies) {
 			if(technology2.getName().equalsIgnoreCase(name)) return false;
 		}
-		if(name == null) return false;
+		if(name == null || name.equalsIgnoreCase("")) return false;
 		
 		return true;
 	}
