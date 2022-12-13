@@ -2,8 +2,6 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
-			<item value="C:\Users\mkpos\Desktop\github\java-camp-2022"/>
-			<item value="C:\Users\mkpos\Desktop\github\java-camp-2022\Devs"/>
 			<item value="C:\Users\mkpos\Desktop\github\java-camp-2022\Week4\Homeworks\Homework1\Devs"/>
 		</list>
 		<list key="projectNameTemplate">
